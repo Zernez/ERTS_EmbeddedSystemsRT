@@ -1,0 +1,17 @@
+#ifndef VIDEO_CAPTURE_STATE_H_
+#define VIDEO_CAPTURE_STATE_H_
+#include "video_capture.hpp"
+
+class VideoCaptureState
+{
+public:
+    virtual void Start(VideoCapture*, XAxiVdma*, XAxiVdma_DmaSetup*, );
+    virtual void Stop(VideoCapture*);
+    virtual void Connect(VideoCapture*);
+    virtual void Disconnect(VideoCapture*);
+    virtual ~VideoCaptureState();
+protected:
+    VideoCaptureState();
+    void ChangeState(VideoCapture*, VideoCaptureState*);
+};
+#endif

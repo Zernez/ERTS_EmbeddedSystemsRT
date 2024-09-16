@@ -1,0 +1,18 @@
+#include "video_capture_state.hpp"
+
+VideoCaptureState::Connect(VideoCapture* context){
+
+}
+
+VideoCaptureState::Disconnect(VideoCapture* context){
+
+}
+
+VideoCaptureState::Start(VideoCapture* context){
+
+}
+
+VideoCaptureState::Stop(VideoCapture* context){
+
+}
+

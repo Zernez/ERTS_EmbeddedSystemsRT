@@ -1,0 +1,19 @@
+#ifndef INTERRUPT_CONTROLLER_H_
+#define INTERRUPT_CONTROLLER_H_
+
+#include "xscugic.h"
+
+
+class InterruptController{
+public:
+	InterruptController();
+	~InterruptController();
+	void Enable();
+	void Disable();
+	void ConnectInterrupt();
+private:
+	XScuGic intc_;
+	XScuGic_Config* intc_config_;
+};
+
+#endif

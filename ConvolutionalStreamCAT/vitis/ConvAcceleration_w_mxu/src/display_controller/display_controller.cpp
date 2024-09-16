@@ -1,0 +1,120 @@
+#include "display_controller.h"
+#include "display_stopped.h"
+#include <stdio.h>
+
+DisplayController::DisplayController(XAxiVdma* vdma, u16 vtc_id, u32 dyn_clk_addr, u8* frame_ptr[NUM_FRAMES], u32 stride) :
+	state_(DisplayStopped::Instance()),
+	video_mode_(VMODE_640x480),
+	vdma_(vdma),
+	vtc_id_(vtc_id),
+	dyn_clk_addr_(dyn_clk_addr),
+	current_frame_(0),
+	stride_(stride)
+{
+	SetFramePtr(frame_ptr);
+
+	ClkFindParams(video_mode_.freq, &clk_mode_);
+
+	pixel_frequency_ = clk_mode_.freq;
+
+	ClkFindReg(&clk_reg_, &clk_mode_);
+	ClkWriteReg(&clk_reg_, dyn_clk_addr_);
+	ClkStart(dyn_clk_addr_);
+
+	vdma_config_.FrameDelay = 0;
+	vdma_config_.EnableCircularBuf = 1;
+	vdma_config_.EnableSync = 0;
+	vdma_config_.PointNum = 0;
+	vdma_config_.EnableFrameCounter = 0;
+
+	vtc_config_ = XVtc_LookupConfig(vtc_id_);
+
+	XVtc_CfgInitialize(vtc_, vtc_config_, vtc_config_->BaseAddress);
+}
+
+
+DisplayController::~DisplayController(){
+	
+}
+
+void DisplayController::Start(){
+	state_->Start(this);
+}
+
+void DisplayController::Stop(){
+	state_->Stop(this);
+}
+
+void DisplayController::ChangeState(DisplayControllerState* s){
+	state_ = s;
+}
+
+XAxiVdma* DisplayController::GetVdma(){
+	return vdma_;
+}
+
+XAxiVdma_DmaSetup* DisplayController::GetVdmaConfig(){
+	return &vdma_config_;
+}
+
+XVtc* DisplayController::GetVtc(){
+	return vtc_;
+}
+
+u16 DisplayController::GetVtcId(){
+	return vtc_id_;
+}
+
+XVtc_Config* DisplayController::GetVtcConfig(){
+	return vtc_config_;
+}
+
+XVtc_Timing* DisplayController::GetVtcTiming(){
+	return &vtc_timing_;
+}
+
+XVtc_SourceSelect* DisplayController::GetVtcSourceSelect(){
+	return &vtc_source_select_;
+}
+
+ClkConfig* DisplayController::GetClkConfig(){
+	return &clk_reg_;
+}
+
+ClkMode* DisplayController::GetClkMode(){
+	return &clk_mode_;
+}
+
+VideoMode* DisplayController::GetVideoMode(){
+	return &video_mode_;
+}
+
+u32 DisplayController::GetDynClkAddr(){
+	return dyn_clk_addr_;
+}
+
+double DisplayController::GetPixelFrequency(){
+	return pixel_frequency_;
+}
+
+void DisplayController::SetPixelFrequency(double pixel_frequency){
+	pixel_frequency_ = pixel_frequency;
+}
+
+void DisplayController::SetFramePtr(u8* frame_ptr[NUM_FRAMES]){
+	for(int i=0; i < NUM_FRAMES; i++){
+		frame_ptr_[i] = frame_ptr[i];
+	}
+}
+
+u8* DisplayController::GetFramePtr(u32 frame_index){
+	return frame_ptr_[frame_index];
+}
+u32 DisplayController::GetCurrentFrame(){
+	return current_frame_;
+}
+
+u32 DisplayController::GetStride(){
+	return stride_;
+}
+

@@ -1,0 +1,109 @@
+#include "video_capture.h"
+
+#include "video_capture_disconnected.h"
+#include "video_capture_state.h"
+
+
+VideoCapture::VideoCapture(InterruptController* intc, XAxiVdma* vdma, u16 gpio_id, u16 vtc_id, u16 vtc_interrupt_id, u8* frame_ptr[3], u32 stride, bool start_on_detect) :
+	state_(VideoCaptureDisconnected::Instance()),
+	intc_(intc),
+	vdma_(vdma),
+	vtc_(vtc_id, vtc_interrupt_id),
+	stride_(stride),
+	current_frame_(0)
+{
+	for(int i=0; i < NUM_FRAMES; i++){
+		frame_ptr_[i] = frame_ptr[i];
+	}
+
+	// Configure VDMA
+	vdma_config_.FrameDelay = 0;
+	vdma_config_.EnableCircularBuf = 1;
+	vdma_config_.EnableSync = 0;
+	vdma_config_.PointNum = 0;
+	vdma_config_.EnableFrameCounter = 0;
+
+	// Initialize Video Timing Controller
+	vtc_config_ = XVtc_LookupConfig(vtc_id_);
+	XVtc_CfgInitialize(&vtc_, vtc_config_, vtc_config_->BaseAddress);
+	XVtc_SelfTest(&vtc_);
+
+	//TODO: Add failure state if anything goes wrong during initialization
+
+	// Initialize GPIO
+	XGpio_Initialize(&gpio_, gpio_id);
+	XGpio_SelfTest(&gpio_);
+	XGpio_DiscreteWrite(&gpio_, 1, 0);
+	XGpio_SetDataDirection(&gpio_, 1, 0);
+	XGpio_SetDataDirection(&gpio_, 2, 1);
+
+	XGpio_InterruptEnable(&gpio_, XGPIO_IR_CH2_MASK);
+	XGpio_InterruptGlobalEnable(&gpio_);
+
+	XGpio_DiscreteWrite(&gpio_, 1, 1);
+}
+
+VideoCapture::~VideoCapture(){}
+
+void VideoCapture::Start(){
+	state_->Start(this);
+}
+
+void VideoCapture::Stop(){
+	state_->Stop(this);
+}
+
+void VideoCapture::Connect(){
+	state_->Connect(this);
+}
+
+void VideoCapture::Disconnect(){
+	state_->Disconnect(this);
+}
+
+void VideoCapture::ChangeFrame(u32 frame_index){
+	state_->ChangeFrame(this, frame_index);
+}
+
+void VideoCapture::ChangeState(VideoCaptureState* state){
+	state_ = state;
+}
+
+void VideoCapture::SetCallback(VideoCallback, void*){
+
+}
+
+void VideoCapture::ConfigureVdma(){
+
+}
+
+void VideoCapture::ResetVdma(){
+
+}
+
+void VideoCapture::SetCurrentFrame(u32){
+
+}
+
+void VideoCapture::GpioLockedISR(){
+	u32 locked = XGpio_DiscreteRead(&gpio_, 2);
+	if(locked){
+		XVtc_RegUpdateEnable(&vtc_);
+		XVtc_SetCallBack(&vtc_, XVTC_HANDLER_LOCK, VtcLockedIsr, this);
+		XVtc_IntrEnable(&vtc_, 0x100);
+		XVtc_EnableDetector(&vtc_);
+		intc_->Enable(vtc_.GetInterruptId());
+	}
+	else
+	{
+		intc_->Disable(vtc_.GetInterruptId());
+		Disconnect();
+	}
+}
+
+void VideoCapture::VtcLockedISR(){
+	if(vtc_.GetDetectionStatus() & XVTC_STAT_LOCKED_MASK){
+		vtc_.GetDetectorTiming();
+		Connect();
+	}
+}

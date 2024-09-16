@@ -1,0 +1,11 @@
+#ifndef INTERRUPT_CONTROLLER_H_
+#define INTERRUPT_CONTROLLER_H_
+
+class InterruptController{
+public:
+	void Enable();
+	void Disable();
+private:
+};
+
+#endif

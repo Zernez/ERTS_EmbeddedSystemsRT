@@ -1,0 +1,4 @@
+#include "video_connected.hpp"
+
+VideoCaptureState* VideoConnected::instance_ = nulltpr;
+

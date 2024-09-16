@@ -1,0 +1,23 @@
+#include "video_disconnected.hpp"
+
+VideoCaptureState* VideoDisconnected::instance_ = 0;
+
+VideoCaptureState* VideoDisconnected::Instance(){
+	if(instance_ == 0)
+		instance_ = new VideoDisconnected;
+	return instance_;
+}
+
+void VideoDisconnected::Connect(VideoCapture* context) {
+	//TODO: Connect
+	ChangeState(context, VideoConnected::Instance());
+}
+
+VideoDisconnected::VideoDisconnected(){
+
+}
+
+VideoDisconnected::~VideoDisconnected(){
+	if(instance_ != 0)
+		delete instance_;
+}

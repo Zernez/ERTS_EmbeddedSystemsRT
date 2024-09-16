@@ -1,0 +1,22 @@
+#pragma once
+#include "video_connected.hpp"
+#include "video_paused.hpp"
+
+class VideoStreaming : public VideoConnected
+{
+public:
+	static VideoCaptureState* Instance();
+
+	virtual void Stop(VideoCapture* context) override;
+protected:
+    VideoStreaming(){
+
+    }
+    ~VideoStreaming(){
+    	if(instance_ != nullptr){
+    		delete instance_;
+    	}
+    }
+private:
+    static VideoCaptureState* instance_;
+};

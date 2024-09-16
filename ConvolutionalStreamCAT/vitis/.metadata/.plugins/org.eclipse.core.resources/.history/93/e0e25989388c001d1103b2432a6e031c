@@ -1,0 +1,28 @@
+#include "interrupt_controller.h"
+
+#include "xparameters.h"
+
+InterruptController::InterruptController()
+{
+	intc_config_ = XScuGic_LookupConfig(XPAR_SCUGIC_SINGLE_DEVICE_ID);
+	XScuGic_CfgInitialize(&intc_, intc_config_, intc_config_->CpuBaseAddress);
+}
+
+InterruptController::~InterruptController(){
+
+}
+
+void InterruptController::Enable(){
+
+}
+
+void InterruptController::Disable(){
+
+}
+
+void InterruptController::ConnectInterrupts(const InterruptVectorTable* ivt, unsigned int no_vectors){
+	for(unsigned int = 0; i < no_vectors; i++)
+	{
+
+	}
+}

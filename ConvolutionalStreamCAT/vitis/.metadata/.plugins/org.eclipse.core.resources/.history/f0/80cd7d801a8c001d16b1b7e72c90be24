@@ -1,0 +1,59 @@
+#include "video_capture_paused.hpp"
+#include "video_capture_streaming.hpp"
+
+VideoCaptureState* VideoCapturePaused::instance_ = 0;
+
+VideoCaptureState* VideoCapturePaused::Instance(){
+	if(instance_ == 0)
+		instance_ = new VideoCapturePaused;
+	return instance_;
+}
+
+void VideoCapturePaused::Start(VideoCapture* context){
+	//TODO: Setup Streaming
+	int status;
+	int i;
+	/*
+	 * Configure the vdma_ to access a frame with the same dimensions as the
+	 * current mode
+	 */
+	context->vdma__config_.VertSizeInput = context->timing.VActiveVideo;
+	context->vdma__config_.HoriSizeInput = context->timing.HActiveVideo * 3;
+	context->vdma__config_.FixedFrameStoreAddr = context->curFrame;
+
+	/*
+	 *Also reset the stride and address values, in case the user manually changed them
+	 */
+	context->vdma_config_.Stride = context->stride_;
+	for (i = 0; i < 3; i++)
+	{
+		context->vdma_config_.FrameStoreStartAddr[i] = (u32)  context->frame_ptr_[i];
+	}
+	status = XAxivdma__DmaConfig(context->vdma_, XAXIVDMA_WRITE, &(context->vdma_config_));
+	if (status != XST_SUCCESS){
+		xdbg_printf(XDBG_DEBUG_GENERAL, "Write channel config failed %d\r\n", status);
+	}
+	status = XAxivdma__DmaSetBufferAddr(context->vdma_, XAXIVDMA_WRITE, context->vdma_config_.FrameStoreStartAddr);
+	if (status != XST_SUCCESS){
+		xdbg_printf(XDBG_DEBUG_GENERAL, "Write channel set buffer address failed %d\r\n", status);
+	}
+	status = XAxivdma__DmaStart(context->vdma_, XAXIVDMA_WRITE);
+	if (status != XST_SUCCESS){
+		xdbg_printf(XDBG_DEBUG_GENERAL, "Start Write transfer failed %d\r\n", status);
+	}
+	status = XAxivdma__StartParking(context->vdma_, context->current_frame_, XAXIVDMA_WRITE);
+	if (status != XST_SUCCESS){
+		xdbg_printf(XDBG_DEBUG_GENERAL, "Unable to park the Write channel %d\r\n", status);
+	}
+
+	ChangeState(context, VideoCaptureStreaming::Instance());
+}
+
+VideoCapturePaused::VideoCapturePaused(){
+
+}
+
+VideoCapturePaused::~VideoCapturePaused(){
+	if(instance_ != 0)
+		delete instance_;
+}

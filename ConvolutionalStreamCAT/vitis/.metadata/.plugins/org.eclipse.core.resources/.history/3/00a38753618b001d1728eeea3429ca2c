@@ -1,0 +1,25 @@
+#include "video_streaming.hpp"
+
+VideoCaptureState* VideoStreaming::instance_ = 0;
+
+VideoCaptureState* VideoStreaming::Instance(){
+	if(instance_ == 0)
+		instance_ = new VideoStreaming;
+	return instance_;
+}
+
+void VideoStreaming::Stop(VidoeCapture* context){
+	//XAxiVdma_Reset(context->vdma_, XAXIVDMA_WRITE);
+	//while(XAxiVdma_ResetNotDone(context->vdma, XAXIVDMA_WRITE));
+	ChangeState(context, VideoPaused::Instance());
+}
+
+VideoStreaming::VideoStreaming(){
+
+}
+
+VideoStreaming::~VideoStreaming(){
+	if(instance_ != 0){
+		delete instance_;
+	}
+}

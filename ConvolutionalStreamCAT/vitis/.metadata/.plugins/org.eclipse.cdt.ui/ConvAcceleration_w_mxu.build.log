@@ -1,0 +1,25 @@
+12:53:41 **** Incremental Build of configuration Debug for project ConvAcceleration_w_mxu ****
+make all 
+C:/Xilinx/Vitis/2022.2/gnuwin/bin/make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+C:/Xilinx/Vitis/2022.2/gnuwin/bin/make --no-print-directory main-build
+'Building file: ../src/display_controller/display_controller.cpp'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_controller/display_controller.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/git/erts2022/vitis/CAT_w_mmult/export/CAT_w_mmult/sw/CAT_w_mmult/standalone_domain/bspinclude/include -MMD -MP -MF"src/display_controller/display_controller.d" -MT"src/display_controller/display_controller.o" -o "src/display_controller/display_controller.o" "../src/display_controller/display_controller.cpp"
+'Finished building: ../src/display_controller/display_controller.cpp'
+' '
+'Building target: ConvAcceleration_w_mxu.elf'
+'Invoking: ARM v7 g++ linker'
+arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/git/erts2022/vitis/CAT_w_mmult/export/CAT_w_mmult/sw/CAT_w_mmult/standalone_domain/bsplib/lib -o "ConvAcceleration_w_mxu.elf"  ./src/video_capture/video_capture.o ./src/video_capture/video_capture_connected.o ./src/video_capture/video_capture_disconnected.o ./src/video_capture/video_capture_paused.o ./src/video_capture/video_capture_state.o ./src/video_capture/video_capture_streaming.o  ./src/interrupt_controller/interrupt_controller.o  ./src/dynclk/dynclk.o  ./src/display_controller/display_controller.o ./src/display_controller/display_controller_state.o ./src/display_controller/display_running.o ./src/display_controller/display_stopped.o  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: ConvAcceleration_w_mxu.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ConvAcceleration_w_mxu.elf  |tee "ConvAcceleration_w_mxu.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 139587	   3544	18685136	18828267	11f4beb	ConvAcceleration_w_mxu.elf
+'Finished building: ConvAcceleration_w_mxu.elf.size'
+' '
+
+12:53:44 Build Finished (took 2s.940ms)
+

@@ -1,0 +1,18 @@
+#ifndef VIDEO_STREAMING_RUNNING_H_
+#define VIDEO_STREAMING_RUNNING_H_
+#include "video_streaming_state.hpp"
+
+
+class VideoStreamingRunning : public VideoStreamingState
+{
+public:
+	static VideoCaptureState* Instance();
+
+	virtual void Stop(VideoCapture*) override;
+protected:
+	VideoStreamingRunning();
+    ~VideoStreamingRunning();
+private:
+    static VideoCaptureState* instance_;
+};
+#endif

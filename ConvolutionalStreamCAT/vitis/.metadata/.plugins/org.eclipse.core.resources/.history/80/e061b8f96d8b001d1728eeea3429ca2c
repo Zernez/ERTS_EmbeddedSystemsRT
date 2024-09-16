@@ -1,0 +1,11 @@
+#include "video_streaming_state.hpp"
+
+VideoStreamingState::Start(){
+
+}
+
+VideoStreamingState::Stop(){
+
+}
+
+

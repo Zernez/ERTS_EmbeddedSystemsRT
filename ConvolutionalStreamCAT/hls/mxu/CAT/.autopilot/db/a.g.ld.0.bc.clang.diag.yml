@@ -1,0 +1,315 @@
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mmult.cpp, Line: 19, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          load-store-loop12.load.3
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        Aseq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      A_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:19:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mmult.cpp, Line: 20, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          load-store-loop9.load.3
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        Bseq
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      B_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:20:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: mmult.cpp, Line: 30, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ OldID='
+  - String:          load-store-loop.store.7
+  - String:          ', '
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        Cseq
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      C_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:30:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: mmult.cpp, Line: 30, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        Cseq
+  - String:          ' '
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      C_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:30:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: mmult.cpp, Line: 20, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        Bseq
+  - String:          ' '
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      B_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:20:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: mmult.cpp, Line: 19, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i32
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        Aseq
+  - String:          ' '
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      A_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:19:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mmult.cpp, Line: 19, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      A_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:19:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mmult.cpp, Line: 19, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        anonymous
+  - String:          '''('
+  - LoopLoc:         'mmult.cpp:19:2'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      A_port
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mmult.cpp, Line: 20, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      B_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:20:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mmult.cpp, Line: 20, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        anonymous
+  - String:          '''('
+  - LoopLoc:         'mmult.cpp:20:2'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      B_port
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: mmult.cpp, Line: 30, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - String:          ' '
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      C_port
+  - String:          ' '
+  - LoopName:        anonymous
+  - String:          ' '
+  - LoopLoc:         'mmult.cpp:30:2'
+  - String:          ' '
+  - Function:        'mmult(int const*, int const*, int*)'
+    DebugLoc:        { File: mmult.cpp, Line: 9, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: mmult.cpp, Line: 30, Column: 2 }
+Function:        _Z5mmultPKiS0_Pi
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '64'
+  - String:          ' and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        anonymous
+  - String:          '''('
+  - LoopLoc:         'mmult.cpp:30:2'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      C_port
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

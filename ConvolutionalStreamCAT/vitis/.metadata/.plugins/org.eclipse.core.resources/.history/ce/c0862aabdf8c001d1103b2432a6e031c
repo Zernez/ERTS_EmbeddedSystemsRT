@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include "xuartps.h"
+#include "math.h"
+#include <ctype.h>
+#include <stdlib.h>
+
+#include "video_capture/video_capture.h"
+#include "xil_types.h"
+#include "xil_cache.h"
+#include "xparameters.h"
+
+int main(){
+	//TODO: Everything
+	VideoCapture vc;
+	vc.Connect();
+	vc.Start();
+	vc.Stop();
+	vc.Disconnect();
+}

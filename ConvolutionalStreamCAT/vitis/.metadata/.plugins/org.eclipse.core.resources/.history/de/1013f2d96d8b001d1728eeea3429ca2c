@@ -1,0 +1,14 @@
+#ifndef VIDEO_STREAMING_STATE_H_
+#define VIDEO_STREAMING_STATE_H_
+
+class VideoStreamingState
+{
+public:
+    virtual void Start();
+    virtual void Stop();
+protected:
+    VideoStreamingState();
+    void ChangeState(VideoCapture*, VideoStreamingState*);
+};
+
+#endif

@@ -1,0 +1,40 @@
+#include "video_connected.hpp"
+#include "video_streaming_state.hpp"
+
+VideoCaptureState* VideoConnected::instance_ = 0;
+
+VideoCaptureState* VideoConnected::Instance(){
+	if(instance_ == 0)
+		instance_ = new VideoConnected;
+	return instance_;
+}
+
+void VideoConnected::Disconnect(VideoCapture* context){
+	//TODO: Disconnect
+	ChangeState(context, VideoDisconnected::Instance());
+}
+
+void VideoConnected::Start(VideoCapture* context){
+	state_->Start(this);
+}
+
+void VideoConnected::Stop(VideoCapture* context){
+	state_->Stop(this);
+}
+
+
+VideoConnected::VideoConnected(){
+
+}
+
+VideoConnected::~VideoConnected(){
+	if(instance_ != 0)
+		delete instance_;
+}
+
+void VideoConnected::ChangeState(VideoStreamingState* state){
+	state_ = state;
+}
+
+
+

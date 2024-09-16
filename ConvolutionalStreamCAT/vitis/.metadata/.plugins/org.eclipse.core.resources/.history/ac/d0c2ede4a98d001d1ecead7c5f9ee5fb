@@ -1,0 +1,17 @@
+#ifndef DISPLAY_CONTROLLER_H_
+#define DISPLAY_CONTROLLER_H_
+class DisplayControllerState;
+
+class DisplayController
+{
+public:
+    DisplayController();
+    ~DisplayController();
+    void Start();
+    void Stop();
+private:
+    friend class DisplayControllerState;
+    void ChangeState(DisplayControllerState*);
+    DisplayControllerState* _state;
+};
+#endif

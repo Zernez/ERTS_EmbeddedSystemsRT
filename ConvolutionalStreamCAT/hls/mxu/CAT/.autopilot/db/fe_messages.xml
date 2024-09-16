@@ -1,0 +1,18 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/krist/AppData/Roaming/Xilinx/Vitis/mxu/CAT/csynth.tcl:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mmult" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/krist/AppData/Roaming/Xilinx/Vitis/mxu/CAT/directives.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mmult" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmult.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=A offset=slave bundle=A_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmult.cpp:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=B offset=slave bundle=B_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="mmult.cpp:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=m_axi port=C offset=slave bundle=C_port" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

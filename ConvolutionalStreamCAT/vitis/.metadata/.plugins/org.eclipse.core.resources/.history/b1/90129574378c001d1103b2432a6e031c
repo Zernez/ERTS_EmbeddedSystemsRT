@@ -1,0 +1,23 @@
+#include "interrupt_controller.hpp"
+#include "xparameters.h"
+
+InterruptController::InterruptController()
+{
+	intc_config_ = XScuGic_LookupConfig(XPAR_SCUGIC_SINGLE_DEVICE_ID);
+}
+
+InterruptController::~InterruptController(){
+
+}
+
+void InterruptController::Enable(){
+
+}
+
+void InterruptController::Disable(){
+
+}
+
+void InterruptController::ConnectInterrupts(){
+
+}

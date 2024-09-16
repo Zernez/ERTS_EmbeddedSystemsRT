@@ -1,0 +1,22 @@
+#ifndef VIDEO_TIMING_CONTROLLER_H_
+#define VIDEO_TIMING_CONTROLLER_H_
+
+class VideoTimingController
+{
+public:
+	VideoTimingController();
+	~VideoTimingController();
+	void ClearInterrupt();
+	void DisableGenerator();
+	void DisableInterrupt();
+	void DisableRegUpdate();
+	void EnableDetector();
+	void EnableInterrupt();
+	void EnableRegUpdate();
+	u32 GetDetectionStatus();
+
+private:
+
+};
+
+#endif

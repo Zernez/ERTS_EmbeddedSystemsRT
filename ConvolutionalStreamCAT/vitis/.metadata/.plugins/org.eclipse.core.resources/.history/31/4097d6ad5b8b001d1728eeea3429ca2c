@@ -1,0 +1,18 @@
+#pragma once
+#include "video_capture.hpp"
+
+class VideoCapture;
+
+class VideoCaptureState
+{
+public:
+    virtual void Start(VideoCapture*){}
+    virtual void Stop(VideoCapture*){}
+    virtual void Connect(VideoCapture*){}
+    virtual void Disconnect(VideoCapture*){}
+protected:
+    VideoCaptureState(){}
+    void ChangeState(VideoCapture* context, VideoCaptureState* state){
+        context->ChangeState(state);
+    }
+};

@@ -1,0 +1,37 @@
+#ifndef DISPLAY_CONTROLLER_H_
+#define DISPLAY_CONTROLLER_H_
+class DisplayControllerState;
+
+#include "xaxivdma.h"
+#include "xvtc.h"
+
+#include "../dynclk/dynclk.h"
+
+
+class DisplayController
+{
+public:
+    DisplayController();
+    ~DisplayController();
+    void Start();
+    void Stop();
+private:
+    friend class DisplayControllerState;
+    void ChangeState(DisplayControllerState*);
+    DisplayControllerState* _state;
+
+    XAxiVdma* vdma_;
+    XAxiVdma_DmaSetup vdma_config_;
+
+    XVtc* vtc_;
+    XVtc_Config* vtc_config_;
+    XVtc_Timing vtc_timing_;
+    u16 vtc_id_;
+
+    u32 current_frame_;
+    u32 stride_;
+
+    u32 dyn_clk_addr_;
+
+};
+#endif

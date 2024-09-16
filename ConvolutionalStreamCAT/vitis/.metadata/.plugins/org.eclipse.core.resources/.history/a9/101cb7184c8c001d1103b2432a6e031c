@@ -1,0 +1,10 @@
+#ifndef AXI_VDMA_H_
+#define AXI_VDMA_H_
+#include "xaxivdma.h"
+
+class AxiVdma
+{
+
+};
+
+#endif

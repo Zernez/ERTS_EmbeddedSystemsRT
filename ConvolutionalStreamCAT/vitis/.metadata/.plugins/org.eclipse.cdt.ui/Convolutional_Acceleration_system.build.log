@@ -1,0 +1,10 @@
+14:31:20 **** Build of configuration Debug for project Convolutional_Acceleration_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 61120 C:/git/erts2022/vitis/CAT/export/CAT/CAT.xpfm standalone_domain C:/git/erts2022/vitis/Convolutional_Acceleration_system/Debug/system.bif
+sdcard_gen --xpfm C:/git/erts2022/vitis/CAT/export/CAT/CAT.xpfm --sys_config CAT --bif C:/git/erts2022/vitis/Convolutional_Acceleration_system/Debug/system.bif --bitstream C:/git/erts2022/vitis/Convolutional_Acceleration/_ide/bitstream/CAT.bit --elf C:/git/erts2022/vitis/Convolutional_Acceleration/Debug/Convolutional_Acceleration.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/git/erts2022/vitis/Convolutional_Acceleration/_ide/bitstream/CAT.bit
+Running C:/Xilinx/Vitis/2022.2/bin/bootgen  -image C:/git/erts2022/vitis/Convolutional_Acceleration_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+14:31:33 Build Finished (took 12s.865ms)
+

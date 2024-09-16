@@ -1,0 +1,4 @@
+#include "video_disconnected.hpp"
+
+VideoCaptureState* VideoDisconnected::instance_ = nullptr;
+

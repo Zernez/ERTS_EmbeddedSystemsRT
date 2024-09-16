@@ -1,0 +1,11 @@
+#include "video_streaming_state.hpp"
+
+void VideoStreamingState::Start(VideoCapture*){}
+
+void VideoStreamingState::Stop(VideoCapture*){}
+
+VideoStreamingState::VideoStreamingState(){}
+
+void VideoStreamingState::ChangeState(VideoCaptureConnected* context, VideoStreamingState* state){
+	context->ChangeState(state);
+}

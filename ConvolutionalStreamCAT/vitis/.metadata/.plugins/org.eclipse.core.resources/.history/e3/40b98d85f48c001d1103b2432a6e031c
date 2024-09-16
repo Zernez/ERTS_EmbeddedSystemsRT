@@ -1,0 +1,29 @@
+#ifndef VIDEO_TIMING_CONTROLLER_H_
+#define VIDEO_TIMING_CONTROLLER_H_
+
+#include "xvtc.h"
+
+class VideoTimingController
+{
+public:
+	VideoTimingController(u16, u16);
+	~VideoTimingController();
+	void ClearInterrupt();
+	void DisableGenerator();
+	void DisableInterrupt();
+	void DisableRegUpdate();
+	void EnableDetector();
+	void EnableInterrupt(u32);
+	void EnableRegUpdate();
+	u32 GetDetectionStatus();
+	void GetDetectorTiming();
+	u16 GetInterruptId();
+	void SetCallback(u32, void*, void*);
+private:
+	XVtc vtc_;
+	XVtc_Timing timing_;
+	u16 device_id_;
+	u16 interrupt_id_;
+};
+
+#endif

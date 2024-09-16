@@ -1,0 +1,12 @@
+#pragma once
+#include "video_connected.hpp"
+
+class VideoPaused : public VideoConnected
+{
+public:
+
+protected:
+    VideoPaused();
+    ~VideoPaused();
+private:
+};

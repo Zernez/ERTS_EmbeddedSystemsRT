@@ -1,0 +1,53 @@
+#include "video_timing_controller.h"
+
+VideoTimingController::VideoTimingController(u16 device_id, u16 interrupt_id){
+
+}
+
+VideoTimingController::~VideoTimingController(){
+
+}
+
+void VideoTimingController::ClearInterrupt(){
+
+}
+
+void VideoTimingController::DisableGenerator(){
+
+}
+
+void VideoTimingController::DisableInterrupt(){
+
+}
+
+void VideoTimingController::DisableRegUpdate(){
+
+}
+
+void VideoTimingController::EnableDetector(){
+
+}
+
+void VideoTimingController::EnableInterrupt(u32 interrupt_type){
+
+}
+
+void VideoTimingController::EnableRegUpdate(){
+
+}
+
+u32 VideoTimingController::GetDetectionStatus(){
+	return 0;
+}
+
+void VideoTimingController::GetDetectorTiming(){
+
+}
+
+u16 VideoTimingController::GetInterruptId(){
+
+}
+
+void VideoTimingController::SetCallback(u32, void*, void*){
+
+}

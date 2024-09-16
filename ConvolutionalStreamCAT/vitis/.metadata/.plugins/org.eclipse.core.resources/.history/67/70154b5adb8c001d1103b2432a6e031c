@@ -1,0 +1,30 @@
+#include "video_capture_streaming.h"
+
+#include "video_capture_paused.h"
+
+VideoCaptureState* VideoCaptureStreaming::instance_ = 0;
+
+VideoCaptureState* VideoCaptureStreaming::Instance(){
+	if(instance_ == 0)
+		instance_ = new VideoCaptureStreaming;
+	return instance_;
+}
+
+void VideoCaptureStreaming::Stop(VideoCapture* context){
+	//XAxiVdma_Reset(context->vdma_, XAXIVDMA_WRITE);
+	//while(XAxiVdma_ResetNotDone(context->vdma, XAXIVDMA_WRITE));
+	ChangeState(context, VideoCapturePaused::Instance());
+}
+
+void VideoCaptureStreaming::ChangeFrame(VideoCapture* context, u32 frame_index){
+
+}
+
+VideoCaptureStreaming::VideoCaptureStreaming(){
+
+}
+
+VideoCaptureStreaming::~VideoCaptureStreaming(){
+	if(instance_ != 0)
+		delete instance_;
+}

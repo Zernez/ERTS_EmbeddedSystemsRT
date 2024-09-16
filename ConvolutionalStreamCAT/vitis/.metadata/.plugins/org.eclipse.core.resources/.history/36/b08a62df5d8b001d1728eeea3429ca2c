@@ -1,0 +1,26 @@
+#pragma once
+#include "video_capture_state.hpp"
+#include "video_connected.hpp"
+
+class VideoDisconnected : public VideoCaptureState
+{
+public:
+	static VideoCaptureState* Instance(){
+		if(instance_ == nullptr)
+			instance_ = new VideoDisconnected;
+		return instance_;
+	}
+
+	virtual void Connect(VideoCapture* context) override {
+		//TODO: Connect
+		ChangeState(context, VideoConnected::Instance());
+	}
+protected:
+    VideoDisconnected(){}
+    ~VideoDisconnected(){
+    	if(instance_ != nullptr)
+    		delete instance_;
+    }
+private:
+    static VideoCaptureState* instance;
+};

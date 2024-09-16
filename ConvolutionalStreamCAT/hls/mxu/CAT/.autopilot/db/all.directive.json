@@ -1,0 +1,44 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "mmult",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "C:\/Users\/krist\/AppData\/Roaming\/Xilinx\/Vitis\/mxu\/CAT\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "mmult"
+              }]
+          }
+        },
+        {
+          "functionName": "mmult",
+          "label": "mmult_label0",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "C:\/Users\/krist\/AppData\/Roaming\/Xilinx\/Vitis\/mxu\/CAT\/directives.tcl",
+          "sourceLine": "7",
+          "pragma": {"name": "PIPELINE"}
+        },
+        {
+          "functionName": "mmult",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "C:\/Users\/krist\/AppData\/Roaming\/Xilinx\/Vitis\/mxu\/CAT\/csynth.tcl",
+          "sourceLine": "16",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "mmult"
+              }]
+          }
+        }
+      ]
+    }]}

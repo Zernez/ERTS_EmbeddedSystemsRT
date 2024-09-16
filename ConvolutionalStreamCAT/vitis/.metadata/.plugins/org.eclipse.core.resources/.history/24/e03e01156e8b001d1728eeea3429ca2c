@@ -1,0 +1,15 @@
+#include "video_streaming_state.hpp"
+
+void VideoStreamingState::Start(){
+
+}
+
+void VideoStreamingState::Stop(){
+
+}
+
+VideoStreamingState::VideoStreamingState(){}
+
+void VideoStreamingState::ChangeState(VideoConnected*, VideoStreamingState*){
+
+}

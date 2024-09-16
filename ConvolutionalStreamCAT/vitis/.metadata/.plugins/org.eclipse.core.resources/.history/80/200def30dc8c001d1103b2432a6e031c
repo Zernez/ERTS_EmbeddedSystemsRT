@@ -1,0 +1,60 @@
+#ifndef VIDEO_CAPTURE_H_
+#define VIDEO_CAPTURE_H_
+#include "xil_types.h"
+
+#include "xaxivdma.h"
+#include "xgpio.h"
+
+#include "../video_timing_controller/video_timing_controller.h"
+#include "../interrupt_controller/interrupt_controller.h"
+
+#define NUM_FRAMES 3
+
+class VideoCaptureState;
+
+class VideoCapture
+{
+public:
+	using VideoCallback = void (void*, void*);
+
+	VideoCapture(VideoCaptureState* intial_state, InterruptController* intc, XAxiVdma* vdma, u16 gpio_id, u16 vtc_id, u16 vtc_interrupt_id, u8* frame_ptr[3], u32 stride, bool start_on_detect);
+    ~VideoCapture();
+    void Start();
+    void Stop();
+    void ChangeFrame(u32);
+    void SetCallback(VideoCallback, void*);
+
+    void ConfigureVdma();
+    void ResetVdma();
+    void SetCurrentFrame(u32);
+
+private:
+    friend class VideoCaptureState;
+    void ChangeState(VideoCaptureState* state);
+    void Connect();
+    void Disconnect();
+
+    void GpioLockedISR();
+    void VtcLockedISR();
+
+    VideoCaptureState* state_;
+
+    InterruptController* intc_;
+
+    XAxiVdma* vdma_;
+    XAxiVdma_DmaSetup vdma_config_;
+
+    VideoCallback callback_;
+    VideoTimingController vtc_;
+
+    XGpio gpio_;
+
+    u8* frame_ptr_[NUM_FRAMES];
+
+    bool start_on_detect_;
+    bool locked_;
+    u32 stride_;
+    u32 current_frame_;
+
+};
+#endif

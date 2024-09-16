@@ -1,0 +1,5 @@
+#include "video_timing_controller.h"
+
+VideoTimingController::VideoTimingController(u16 device_id, u16 interrupt_id){
+
+}

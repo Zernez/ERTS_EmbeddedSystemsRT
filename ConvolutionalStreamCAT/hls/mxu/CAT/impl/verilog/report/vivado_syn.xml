@@ -1,0 +1,160 @@
+<profile>
+<RunData>
+  <RUN_TYPE>synth</RUN_TYPE>
+  <VIVADO_VERSION>v.2022.2</VIVADO_VERSION>
+  <ROOT_MODULE_CELL>bd_0_i/hls_inst</ROOT_MODULE_CELL>
+</RunData>
+<TimingReport>
+  <TargetClockPeriod>10.000</TargetClockPeriod>
+  <AchievedClockPeriod>5.690</AchievedClockPeriod>
+  <CLOCK_NAME>ap_clk</CLOCK_NAME>
+  <CP_FINAL>5.690</CP_FINAL>
+  <CP_ROUTE>NA</CP_ROUTE>
+  <CP_SYNTH>5.690</CP_SYNTH>
+  <CP_TARGET>10.000</CP_TARGET>
+  <SLACK_FINAL>4.310</SLACK_FINAL>
+  <SLACK_ROUTE></SLACK_ROUTE>
+  <SLACK_SYNTH>4.310</SLACK_SYNTH>
+  <TIMING_MET>TRUE</TIMING_MET>
+  <TNS_FINAL>0.000</TNS_FINAL>
+  <TNS_ROUTE>NA</TNS_ROUTE>
+  <TNS_SYNTH>0.000</TNS_SYNTH>
+  <WNS_FINAL>4.310</WNS_FINAL>
+  <WNS_ROUTE>NA</WNS_ROUTE>
+  <WNS_SYNTH>4.310</WNS_SYNTH>
+</TimingReport>
+<AreaReport>
+  <Resources>
+    <BRAM>20</BRAM>
+    <CLB>0</CLB>
+    <DSP>24</DSP>
+    <FF>3552</FF>
+    <LATCH>0</LATCH>
+    <LUT>2338</LUT>
+    <SRL>307</SRL>
+    <URAM>0</URAM>
+  </Resources>
+  <AvailableResources>
+    <BRAM>120</BRAM>
+    <CLB>0</CLB>
+    <DSP>80</DSP>
+    <FF>35200</FF>
+    <LUT>17600</LUT>
+    <URAM>0</URAM>
+  </AvailableResources>
+</AreaReport>
+<RtlModules>
+  <RtlModule CELL="inst" DEPTH="0" FILE_NAME="bd_0_hls_inst_0.v" ORIG_REF_NAME="mmult" TOP_CELL="bd_0_i/hls_inst/inst">
+    <SubModules count="11">A_port_m_axi_U B_port_m_axi_U C_port_m_axi_U a_buffer_U b_buffer_U c_buffer_U control_s_axi_U grp_mmult_Pipeline_1_fu_130 grp_mmult_Pipeline_2_fu_138 grp_mmult_Pipeline_4_fu_153 grp_mmult_Pipeline_mmult0_mmult1_fu_146</SubModules>
+    <Resources BRAM="20" DSP="24" FF="3552" LUT="2338" LogicLUT="2031" RAMB18="16" RAMB36="2" SRL="307"/>
+    <LocalResources FF="209" LUT="4" LogicLUT="4"/>
+  </RtlModule>
+  <RtlModule CELL="inst/A_port_m_axi_U" BINDMODULE="mmult_A_port_m_axi" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_A_port_m_axi">
+    <Resources BRAM="1" FF="729" LUT="514" LogicLUT="450" RAMB18="1" SRL="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/B_port_m_axi_U" BINDMODULE="mmult_B_port_m_axi" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_B_port_m_axi">
+    <Resources BRAM="1" FF="729" LUT="451" LogicLUT="387" RAMB18="1" SRL="64"/>
+  </RtlModule>
+  <RtlModule CELL="inst/C_port_m_axi_U" BINDMODULE="mmult_C_port_m_axi" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_C_port_m_axi">
+    <Resources BRAM="1" FF="968" LUT="670" LogicLUT="498" RAMB18="1" SRL="172"/>
+  </RtlModule>
+  <RtlModule CELL="inst/a_buffer_U" BINDMODULE="mmult_a_buffer_RAM_1WNR_AUTO_1R1W" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_a_buffer_RAM_1WNR_AUTO_1R1W">
+    <Resources BRAM="8" RAMB18="6" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/b_buffer_U" BINDMODULE="mmult_a_buffer_RAM_1WNR_AUTO_1R1W" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_a_buffer_RAM_1WNR_AUTO_1R1W">
+    <Resources BRAM="8" LUT="1" LogicLUT="1" RAMB18="6" RAMB36="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/c_buffer_U" BINDMODULE="mmult_c_buffer_RAM_AUTO_1R1W" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_c_buffer_RAM_AUTO_1R1W">
+    <Resources BRAM="1" RAMB18="1"/>
+  </RtlModule>
+  <RtlModule CELL="inst/control_s_axi_U" BINDMODULE="mmult_control_s_axi" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_control_s_axi">
+    <Resources FF="235" LUT="206" LogicLUT="206"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_1_fu_130" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_mmult_Pipeline_1">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="57" LUT="26" LogicLUT="26"/>
+    <LocalResources FF="55" LUT="12" LogicLUT="12"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_1_fu_130/flow_control_loop_pipe_sequential_init_U" BINDMODULE="mmult_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_1.v" ORIG_REF_NAME="mmult_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="14" LogicLUT="14"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_2_fu_138" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_mmult_Pipeline_2">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="57" LUT="25" LogicLUT="25"/>
+    <LocalResources FF="55" LUT="12" LogicLUT="12"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_2_fu_138/flow_control_loop_pipe_sequential_init_U" BINDMODULE="mmult_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_2.v" ORIG_REF_NAME="mmult_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="13" LogicLUT="13"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_4_fu_153" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_mmult_Pipeline_4">
+    <SubModules count="1">flow_control_loop_pipe_sequential_init_U</SubModules>
+    <Resources FF="13" LUT="25" LogicLUT="25"/>
+    <LocalResources FF="11" LUT="7" LogicLUT="7"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_4_fu_153/flow_control_loop_pipe_sequential_init_U" BINDMODULE="mmult_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_4.v" ORIG_REF_NAME="mmult_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="18" LogicLUT="18"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146" DEPTH="1" FILE_NAME="mmult.v" ORIG_REF_NAME="mmult_mmult_Pipeline_mmult0_mmult1">
+    <SubModules count="9">flow_control_loop_pipe_sequential_init_U mul_32s_32s_32_2_1_U10 mul_32s_32s_32_2_1_U11 mul_32s_32s_32_2_1_U12 mul_32s_32s_32_2_1_U13 mul_32s_32s_32_2_1_U14 mul_32s_32s_32_2_1_U7 mul_32s_32s_32_2_1_U8 mul_32s_32s_32_2_1_U9</SubModules>
+    <Resources DSP="24" FF="555" LUT="416" LogicLUT="409" SRL="7"/>
+    <LocalResources FF="417" LUT="204" LogicLUT="197" SRL="7"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/flow_control_loop_pipe_sequential_init_U" BINDMODULE="mmult_flow_control_loop_pipe_sequential_init" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_flow_control_loop_pipe_sequential_init">
+    <Resources FF="2" LUT="92" LogicLUT="92"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10" BINDMODULE="mmult_mul_32s_32s_32_2_1" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_mul_32s_32s_32_2_1">
+    <Resources DSP="3" FF="17" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U11" BINDMODULE="mmult_mul_32s_32s_32_2_1" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_mul_32s_32s_32_2_1">
+    <Resources DSP="3" FF="17" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U12" BINDMODULE="mmult_mul_32s_32s_32_2_1" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_mul_32s_32s_32_2_1">
+    <Resources DSP="3" FF="17" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U13" BINDMODULE="mmult_mul_32s_32s_32_2_1" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_mul_32s_32s_32_2_1">
+    <Resources DSP="3" FF="17" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U14" BINDMODULE="mmult_mul_32s_32s_32_2_1" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_mul_32s_32s_32_2_1">
+    <Resources DSP="3" FF="17" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U7" BINDMODULE="mmult_mul_32s_32s_32_2_1" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_mul_32s_32s_32_2_1">
+    <Resources DSP="3" FF="17" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U8" BINDMODULE="mmult_mul_32s_32s_32_2_1" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_mul_32s_32s_32_2_1">
+    <Resources DSP="3" FF="17" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+  <RtlModule CELL="inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U9" BINDMODULE="mmult_mul_32s_32s_32_2_1" DEPTH="2" FILE_NAME="mmult_mmult_Pipeline_mmult0_mmult1.v" ORIG_REF_NAME="mmult_mul_32s_32s_32_2_1">
+    <Resources DSP="3" FF="17" LUT="15" LogicLUT="15"/>
+  </RtlModule>
+</RtlModules>
+<TimingPaths>
+  <TPATH DATAPATH_DELAY="4.206" DATAPATH_LOGIC_DELAY="4.206" DATAPATH_NET_DELAY="0.000" ENDPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg/PCIN[0]" LOGIC_LEVELS="0" MAX_FANOUT="1" SLACK="4.310" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="4.206" DATAPATH_LOGIC_DELAY="4.206" DATAPATH_NET_DELAY="0.000" ENDPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg/PCIN[10]" LOGIC_LEVELS="0" MAX_FANOUT="1" SLACK="4.310" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="4.206" DATAPATH_LOGIC_DELAY="4.206" DATAPATH_NET_DELAY="0.000" ENDPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg/PCIN[11]" LOGIC_LEVELS="0" MAX_FANOUT="1" SLACK="4.310" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="4.206" DATAPATH_LOGIC_DELAY="4.206" DATAPATH_NET_DELAY="0.000" ENDPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg/PCIN[12]" LOGIC_LEVELS="0" MAX_FANOUT="1" SLACK="4.310" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+  <TPATH DATAPATH_DELAY="4.206" DATAPATH_LOGIC_DELAY="4.206" DATAPATH_NET_DELAY="0.000" ENDPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg/PCIN[13]" LOGIC_LEVELS="0" MAX_FANOUT="1" SLACK="4.310" STARTPOINT_PIN="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0/CLK">
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/tmp_product__0" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+    <CELL  NAME="bd_0_i/hls_inst/inst/grp_mmult_Pipeline_mmult0_mmult1_fu_146/mul_32s_32s_32_2_1_U10/dout_reg" PRIMITIVE_TYPE="MULT.dsp.DSP48E1" LINE_NUMBER="24"/>
+  </TPATH>
+</TimingPaths>
+<VivadoReportFiles>
+  <ReportFile TYPE="design_analysis" PATH="verilog/report/mmult_design_analysis_synth.rpt"/>
+  <ReportFile TYPE="failfast" PATH="verilog/report/mmult_failfast_synth.rpt"/>
+  <ReportFile TYPE="timing" PATH="verilog/report/mmult_timing_synth.rpt"/>
+  <ReportFile TYPE="timing_paths" PATH="verilog/report/mmult_timing_paths_synth.rpt"/>
+  <ReportFile TYPE="utilization" PATH="verilog/report/mmult_utilization_synth.rpt"/>
+  <ReportFile TYPE="utilization_hierarchical" PATH="verilog/report/mmult_utilization_hierarchical_synth.rpt"/>
+</VivadoReportFiles>
+</profile>

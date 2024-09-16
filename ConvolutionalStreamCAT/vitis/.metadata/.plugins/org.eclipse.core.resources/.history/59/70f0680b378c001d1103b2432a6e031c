@@ -1,0 +1,21 @@
+#include "interrupt_controller.hpp"
+
+InterruptController::InterruptController(){
+
+}
+
+InterruptController::~InterruptController(){
+
+}
+
+void InterruptController::Enable(){
+
+}
+
+void InterruptController::Disable(){
+
+}
+
+void InterruptController::ConnectInterrupts(){
+
+}

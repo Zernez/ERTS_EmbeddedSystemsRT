@@ -1,0 +1,45 @@
+#include "video_capture_paused.hpp"
+#include "video_capture_streaming.hpp"
+
+VideoCaptureState* VideoCapturePaused::instance_ = 0;
+
+VideoCaptureState* VideoCapturePaused::Instance(){
+	if(instance_ == 0)
+		instance_ = new VideoCapturePaused;
+	return instance_;
+}
+
+void VideoCapturePaused::Start(VideoCapture* context){
+	//TODO: Setup Streaming
+	int status;
+	int i;
+	/*
+	 * Configure the VDMA to access a frame with the same dimensions as the
+	 * current mode
+	 */
+	context->vdma_config_.VertSizeInput = videoPtr->timing.VActiveVideo;
+	context->vdma_config_.HoriSizeInput = videoPtr->timing.HActiveVideo * 3;
+	context->vdma_config_.FixedFrameStoreAddr = videoPtr->curFrame;
+
+	/*
+	 *Also reset the stride and address values, in case the user manually changed them
+	 */
+	context->vdma_config_.Stride = context->stride_;
+	for (i = 0; i < 3; i++)
+	{
+		context->vdma_config_.FrameStoreStartAddr[i] = (u32)  context->frame_ptr_[i];
+	}
+
+
+
+	ChangeState(context, VideoCaptureStreaming::Instance());
+}
+
+VideoCapturePaused::VideoCapturePaused(){
+
+}
+
+VideoCapturePaused::~VideoCapturePaused(){
+	if(instance_ != 0)
+		delete instance_;
+}

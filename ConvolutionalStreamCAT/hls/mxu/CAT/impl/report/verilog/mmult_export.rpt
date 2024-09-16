@@ -1,0 +1,23 @@
+
+
+Implementation tool: Xilinx Vivado v.2022.2
+Project:             mxu
+Solution:            CAT
+Device target:       xc7z010-clg400-1
+Report date:         Fri Jan 06 17:16:31 +0100 2023
+
+#=== Post-Synthesis Resource usage ===
+SLICE:            0
+LUT:           2338
+FF:            3552
+DSP:             24
+BRAM:            20
+URAM:             0
+LATCH:            0
+SRL:            307
+CLB:              0
+
+#=== Final timing ===
+CP required:                     10.000
+CP achieved post-synthesis:      5.690
+Timing met

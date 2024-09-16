@@ -1,0 +1,17 @@
+#ifndef VIDEO_PAUSED_H_
+#define VIDEO_PAUSED_H_
+#include "video_streaming_state.hpp"
+
+
+class VideoStreamingPaused : public VideoStreamingState
+{
+public:
+	static VideoCaptureState* Instance();
+	virtual void Start(VideoCapture*) override;
+protected:
+	VideoStreamingPaused();
+    ~VideoStreamingPaused();
+private:
+    static VideoCaptureState* instance_;
+};
+#endif

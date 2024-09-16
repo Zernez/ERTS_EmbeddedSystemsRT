@@ -1,0 +1,27 @@
+#pragma once
+#include "video_connected.hpp"
+
+class VideoPaused : public VideoConnected
+{
+public:
+	static VideoCaptureState* Instance(){
+		if(instance_ == nullptr)
+			instance_ = new VideoPaused;
+		return instance_;
+	}
+	virtual void Start(VideoCapture*){
+
+	}
+protected:
+    VideoPaused(){
+
+    }
+    ~VideoPaused(){
+    	if(instance_ != nullptr)
+    		delete instance_;
+    }
+private:
+    static VideoCaptureState* instance_;
+};
+
+VideoCaptureState* VideoPaused::instance_ = nullptr;

@@ -1,0 +1,12 @@
+#pragma once
+#include "video_capture_state.hpp"
+
+class VideoDisconnected : public VideoCaptureState
+{
+public:
+
+protected:
+    VideoDisconnected();
+    ~VideoDisconnected();
+private:
+};

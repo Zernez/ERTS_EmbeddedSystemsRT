@@ -1,0 +1,48 @@
+#ifndef VIDEO_CAPTURE_H_
+#define VIDEO_CAPTURE_H_
+#include "xil_types.h"
+
+#include "xgpio.h"
+
+#include "video_timing_controller/video_timing_controller.h"
+
+class VideoCaptureState;
+
+class VideoCapture
+{
+public:
+	using VideoCallback = void (void*, void*);
+
+    VideoCapture();
+    ~VideoCapture();
+    void Start();
+    void Stop();
+
+private:
+    friend class VideoCaptureState;
+    void ChangeState(VideoCaptureState* state);
+    void Connect();
+    void Disconnect();
+
+    void GpioLockedISR();
+    void VtcLockedISR();
+
+    VideoCaptureState* state_;
+
+    XAxiVdma* vdma_;
+    XAxiVdma_DmaSetup vdma_config_;
+
+    VideoCallback callback_;
+    VideoTimingController vtc_;
+
+    XGpio gpio_;
+
+    u8* frame_ptr_[3];
+
+    bool start_on_detect_;
+    bool locked_;
+    u32 stride_;
+    u32 current_frame_;
+
+};
+#endif

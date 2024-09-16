@@ -1,0 +1,25 @@
+#include "video_capture_paused.hpp"
+
+#include "video_capture_streaming.hpp"
+
+VideoCaptureState* VideoStreamingPaused::instance_ = 0;
+
+VideoCaptureState* VideoStreamingPaused::Instance(){
+	if(instance_ == 0)
+		instance_ = new VideoStreamingPaused;
+	return instance_;
+}
+
+void VideoStreamingPaused::Start(VideoCapture* context){
+	//TODO: Setup Streaming
+	ChangeState(context, VideoStreamingRunning::Instance());
+}
+
+VideoStreamingPaused::VideoStreamingPaused(){
+
+}
+
+VideoStreamingPaused::~VideoStreamingPaused(){
+	if(instance_ != 0)
+		delete instance_;
+}

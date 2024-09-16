@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri Jan  6 17:13:38 2023
+# Process ID: 28388
+# Current directory: C:/Users/krist/AppData/Roaming/Xilinx/Vitis/mxu/CAT/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: C:/Users/krist/AppData/Roaming/Xilinx/Vitis/mxu/CAT/impl/ip/vivado.log
+# Journal file: C:/Users/krist/AppData/Roaming/Xilinx/Vitis/mxu/CAT/impl/ip\vivado.jou
+# Running On: LAPTOP-91VRCND3, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 34098 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace

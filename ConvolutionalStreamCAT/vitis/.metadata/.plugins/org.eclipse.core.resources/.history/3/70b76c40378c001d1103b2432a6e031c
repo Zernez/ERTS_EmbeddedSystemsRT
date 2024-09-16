@@ -1,0 +1,22 @@
+#include "interrupt_controller.hpp"
+#include "xparameters.h"
+
+InterruptController::InterruptController(){
+
+}
+
+InterruptController::~InterruptController(){
+
+}
+
+void InterruptController::Enable(){
+
+}
+
+void InterruptController::Disable(){
+
+}
+
+void InterruptController::ConnectInterrupts(){
+
+}

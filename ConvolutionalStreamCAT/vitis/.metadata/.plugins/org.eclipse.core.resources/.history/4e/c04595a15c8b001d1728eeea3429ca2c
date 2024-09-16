@@ -1,0 +1,3 @@
+#include "video_capture_state.hpp"
+
+VideoCaptureState::Connect()

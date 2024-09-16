@@ -1,0 +1,23 @@
+#ifndef VIDEO_CONNECTED_H_
+#define VIDEO_CONNECTED_H_
+#include "video_capture.hpp"
+#include "video_capture_state.hpp"
+#include "video_disconnected.hpp"
+
+class VideoStreamingState;
+
+class VideoConnected : public VideoCaptureState
+{
+public:
+	static VideoCaptureState* Instance();
+	virtual void Disconnect(VideoCapture* context) override;
+	virtual void Start(VideoCapture* context) override;
+	virtual void Stop(VideoCapture* context) override;
+protected:
+    VideoConnected();
+    ~VideoConnected();
+private:
+    static VideoCaptureState* instance_;
+
+};
+#endif
