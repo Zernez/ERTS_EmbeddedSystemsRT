@@ -1,0 +1,208 @@
+
+
+================================================================
+== Vivado HLS Report for 'advios'
+================================================================
+* Date:           Wed Oct 12 22:54:08 2022
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        advios.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z010clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|      3.25|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----------+-----+-----------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    | min |    max    | min |    max    |   Type  |
+    +-----+-----------+-----+-----------+---------+
+    |    0|  100000005|    1|  100000006|   none  |
+    +-----+-----------+-----+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 2
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (advios_ssdm_threa) | (advios_ssdm_threa_1)
+2 --> 
+* FSM state operations: 
+
+ <State 1>: 3.10ns
+ST_1: StgValue_3 (9)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecIFCore(i4* %ctrl, [1 x i8]* @p_str10, [10 x i8]* @p_str14, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [17 x i8]* @p_str15)
+
+ST_1: StgValue_4 (10)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i1* %clk), !map !82
+
+ST_1: StgValue_5 (11)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap(i1* %reset), !map !86
+
+ST_1: StgValue_6 (12)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i4* %ctrl), !map !90
+
+ST_1: StgValue_7 (13)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap(i4* %inSwitch), !map !94
+
+ST_1: StgValue_8 (14)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outLeds), !map !98
+
+ST_1: StgValue_9 (15)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i4* %count), !map !102
+
+ST_1: StgValue_10 (16)  [1/1] 0.00ns  loc: ../temp/advios.h:19
+:7  call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @p_str, [7 x i8]* @p_str) nounwind
+
+ST_1: advios_ssdm_threa (17)  [1/1] 0.00ns  loc: ../temp/advios.h:20
+:8  %advios_ssdm_threa = load i1* @advios_ssdm_thread_M_makePulse, align 1
+
+ST_1: StgValue_12 (18)  [1/1] 0.00ns  loc: ../temp/advios.h:20
+:9  br i1 %advios_ssdm_threa, label %1, label %2
+
+ST_1: StgValue_13 (20)  [1/1] 0.00ns  loc: ../temp/advios.h:20
+:0  call void (...)* @_ssdm_op_SpecProcessDecl([7 x i8]* @p_str, i32 2, [10 x i8]* @p_str8) nounwind
+
+ST_1: StgValue_14 (21)  [1/1] 0.00ns  loc: ../temp/advios.h:21
+:1  call void (...)* @_ssdm_op_SpecSensitive([10 x i8]* @p_str8, [4 x i8]* @p_str2, i1* %clk, i32 1) nounwind
+
+ST_1: StgValue_15 (22)  [1/1] 0.00ns  loc: ../temp/advios.h:22
+:2  call void (...)* @_ssdm_op_SpecSensitive([10 x i8]* @p_str8, [6 x i8]* @p_str3, i1* %reset, i32 3) nounwind
+
+ST_1: advios_ssdm_threa_1 (23)  [1/1] 0.00ns  loc: ../temp/advios.h:23
+:3  %advios_ssdm_threa_1 = load i1* @advios_ssdm_thread_M_controlLeds, align 1
+
+ST_1: StgValue_17 (24)  [1/1] 0.00ns  loc: ../temp/advios.h:23
+:4  br i1 %advios_ssdm_threa_1, label %3, label %4
+
+ST_1: StgValue_18 (26)  [1/1] 0.00ns  loc: ../temp/advios.h:23
+:0  call void (...)* @_ssdm_op_SpecProcessDecl([7 x i8]* @p_str, i32 2, [12 x i8]* @p_str13) nounwind
+
+ST_1: StgValue_19 (27)  [1/1] 0.00ns  loc: ../temp/advios.h:24
+:1  call void (...)* @_ssdm_op_SpecSensitive([12 x i8]* @p_str13, [4 x i8]* @p_str2, i1* %clk, i32 1) nounwind
+
+ST_1: StgValue_20 (28)  [1/1] 0.00ns  loc: ../temp/advios.h:25
+:2  call void (...)* @_ssdm_op_SpecSensitive([12 x i8]* @p_str13, [6 x i8]* @p_str3, i1* %reset, i32 3) nounwind
+
+ST_1: StgValue_21 (29)  [1/1] 0.00ns  loc: ../temp/advios.h:26
+:3  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [4 x i8]* @p_str2, i32 0, i32 0, i1* %clk) nounwind
+
+ST_1: StgValue_22 (30)  [1/1] 0.00ns  loc: ../temp/advios.h:27
+:4  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [6 x i8]* @p_str3, i32 0, i32 0, i1* %reset) nounwind
+
+ST_1: StgValue_23 (31)  [1/1] 0.00ns  loc: ../temp/advios.h:28
+:5  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [13 x i8]* @p_str4, [5 x i8]* @p_str5, i32 0, i32 0, i4* %ctrl) nounwind
+
+ST_1: StgValue_24 (32)  [1/1] 0.00ns  loc: ../temp/advios.h:29
+:6  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [13 x i8]* @p_str4, [9 x i8]* @p_str6, i32 0, i32 0, i4* %inSwitch) nounwind
+
+ST_1: StgValue_25 (33)  [1/1] 0.00ns  loc: ../temp/advios.h:30
+:7  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 1, [13 x i8]* @p_str4, [8 x i8]* @p_str7, i32 0, i32 0, i4* %outLeds) nounwind
+
+ST_1: StgValue_26 (34)  [1/1] 0.00ns  loc: ../temp/advios.h:31
+:8  call void (...)* @_ssdm_op_SpecChannel([7 x i8]* @p_str, i32 0, [13 x i8]* @p_str4, [6 x i8]* @p_str12, i32 1, i32 0, i4* %count) nounwind
+
+ST_1: StgValue_27 (35)  [1/1] 0.00ns  loc: ../temp/advios.h:21
+:9  ret void
+
+ST_1: StgValue_28 (37)  [2/2] 3.10ns  loc: ../temp/advios.h:23
+:0  call void @"advios::controlLeds"(i1* %clk, i1* %reset, i4* %ctrl, i4* %inSwitch, i4* %outLeds, i4* %count)
+
+ST_1: StgValue_29 (40)  [2/2] 2.35ns  loc: ../temp/advios.h:20
+:0  call void @"advios::makePulse"(i1* %clk, i1* %reset, i4* %ctrl, i4* %inSwitch, i4* %outLeds, i4* %count)
+
+
+ <State 2>: 2.35ns
+ST_2: StgValue_30 (37)  [1/2] 2.07ns  loc: ../temp/advios.h:23
+:0  call void @"advios::controlLeds"(i1* %clk, i1* %reset, i4* %ctrl, i4* %inSwitch, i4* %outLeds, i4* %count)
+
+ST_2: StgValue_31 (38)  [1/1] 0.00ns
+:1  br label %UnifiedUnreachableBlock
+
+ST_2: StgValue_32 (40)  [1/2] 2.35ns  loc: ../temp/advios.h:20
+:0  call void @"advios::makePulse"(i1* %clk, i1* %reset, i4* %ctrl, i4* %inSwitch, i4* %outLeds, i4* %count)
+
+ST_2: StgValue_33 (41)  [1/1] 0.00ns
+:1  br label %UnifiedUnreachableBlock
+
+ST_2: StgValue_34 (43)  [1/1] 0.00ns
+UnifiedUnreachableBlock:0  unreachable
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8ns, clock uncertainty: 1ns.
+
+ <State 1>: 3.1ns
+The critical path consists of the following:
+	'call' operation (../temp/advios.h:23) to 'advios::controlLeds' [37]  (3.1 ns)
+
+ <State 2>: 2.35ns
+The critical path consists of the following:
+	'call' operation (../temp/advios.h:20) to 'advios::makePulse' [40]  (2.35 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

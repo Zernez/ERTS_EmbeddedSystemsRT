@@ -1,0 +1,20 @@
+
+
+Implementation tool: Xilinx Vivado v.2017.2
+Project:             advios.prj
+Solution:            solution1
+Device target:       xc7z010clg400-1
+Report date:         Wed Oct 12 22:57:22 +0200 2022
+
+#=== Post-Implementation Resource usage ===
+SLICE:           16
+LUT:             23
+FF:              41
+DSP:              0
+BRAM:             0
+SRL:              0
+#=== Final timing ===
+CP required:    8.000
+CP achieved post-synthesis:    4.467
+CP achieved post-implementation:    NA
+No Sequential Path

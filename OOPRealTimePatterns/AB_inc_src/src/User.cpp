@@ -1,0 +1,19 @@
+///////////////////////////////////////////////////////////
+//  User.cpp
+//  Implementation of the Class User
+//  Created on:      21-Nov-2022 14:37:56
+//  Original author: Annika
+///////////////////////////////////////////////////////////
+
+#include "User.h"
+
+
+User::User(){
+
+}
+
+
+
+User::~User(){
+
+}

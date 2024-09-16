@@ -1,0 +1,83 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Mon Oct 10 13:05:10 2022
+# Process ID: 21560
+# Current directory: C:/git/erts/assignment_2/project_6 soft-vs-hard
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21384 C:\git\erts\assignment_2\project_6 soft-vs-hard\exercise_6.xpr
+# Log file: C:/git/erts/assignment_2/project_6 soft-vs-hard/vivado.log
+# Journal file: C:/git/erts/assignment_2/project_6 soft-vs-hard\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/User/Desktop/UNI/EmbeddedRealTimeSystem/Assignment2/exercises/exercise_6' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/git/erts/assignment_2/led_ip_1.0', nor could it be found using path 'C:/Users/User/Desktop/UNI/EmbeddedRealTimeSystem/Assignment2/exercises/led_ip_1.0'.
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/git/erts/assignment_2/matrix_ip_1.0', nor could it be found using path 'C:/Users/User/Desktop/UNI/EmbeddedRealTimeSystem/Assignment2/exercises/matrix_ip_1.0'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/git/erts/assignment_2/led_ip_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/git/erts/assignment_2/matrix_ip_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'system_processing_system7_0_0' generated file not found 'c:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/sim/libps7.so'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'system_processing_system7_0_0' generated file not found 'c:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/sim/libps7.dll'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'system_processing_system7_0_0' generated file not found 'c:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/sim/libremoteport.so'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'system_processing_system7_0_0' generated file not found 'c:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/sim/libremoteport.dll'. Please regenerate to continue.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'system.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+system_led_ip_0_0
+system_matrix_ip_0_0
+
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:15 . Memory (MB): peak = 838.680 ; gain = 61.816
+update_compile_order -fileset sources_1
+INFO: [Vivado 12-4158] Exported Hardware file is out of date. Exported hardware information may be inconsistent with respect to the current state of the design. It is recommended that you re-export the design and launch SDK otherwise SDK is launched with out of date hardware system file.
+INFO: [Vivado 12-4158] Exported Hardware file is out of date. Exported hardware information may be inconsistent with respect to the current state of the design. It is recommended that you re-export the design and launch SDK otherwise SDK is launched with out of date hardware system file.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Mon Oct 10 13:07:05 2022] Launched synth_1...
+Run output will be captured here: C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.runs/synth_1/runme.log
+[Mon Oct 10 13:07:05 2022] Launched impl_1...
+Run output will be captured here: C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 121 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/git/erts/assignment_2/project_6 soft-vs-hard/.Xil/Vivado-21560-LAPTOP-91VRCND3/dcp1/system_wrapper_board.xdc]
+Finished Parsing XDC File [C:/git/erts/assignment_2/project_6 soft-vs-hard/.Xil/Vivado-21560-LAPTOP-91VRCND3/dcp1/system_wrapper_board.xdc]
+Parsing XDC File [C:/git/erts/assignment_2/project_6 soft-vs-hard/.Xil/Vivado-21560-LAPTOP-91VRCND3/dcp1/system_wrapper_early.xdc]
+Finished Parsing XDC File [C:/git/erts/assignment_2/project_6 soft-vs-hard/.Xil/Vivado-21560-LAPTOP-91VRCND3/dcp1/system_wrapper_early.xdc]
+Parsing XDC File [C:/git/erts/assignment_2/project_6 soft-vs-hard/.Xil/Vivado-21560-LAPTOP-91VRCND3/dcp1/system_wrapper.xdc]
+Finished Parsing XDC File [C:/git/erts/assignment_2/project_6 soft-vs-hard/.Xil/Vivado-21560-LAPTOP-91VRCND3/dcp1/system_wrapper.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1104.719 ; gain = 9.082
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1104.719 ; gain = 9.082
+Generating merged BMM file for the design top 'system_wrapper'...
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  SRLC32E => SRL16E: 3 instances
+
+open_run: Time (s): cpu = 00:00:28 ; elapsed = 00:00:20 . Memory (MB): peak = 1223.004 ; gain = 358.773
+file copy -force {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.runs/impl_1/system_wrapper.sysdef} {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf}
+
+launch_sdk -workspace {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk} -hwspec {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf}
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk -hwspec C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk} -hwspec {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf}
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk -hwspec C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk} -hwspec {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf}
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk -hwspec C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 10 13:18:06 2022...

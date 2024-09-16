@@ -1,0 +1,18 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../temp/tb_advios.cpp in debug mode
+   Compiling ../../../../../temp/advios.cpp in debug mode
+   Generating csim.exe
+Note: VCD trace timescale unit is set by user to 1.000000e-008 sec.
+INFO: Simulating
+DEBUG: Initialisation succeeded
+Trace Warning:
+Multiple cycles found with same (1) time units count.
+Waveform viewers will only show the states of the last one.
+Use ((vcd_trace_file*)vcdfile)->sc_set_vcd_time_unit(int exponent10_seconds)
+to increase time resolution.
+
+Test passed)
+Created ADVIOS_Wave.vcd
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

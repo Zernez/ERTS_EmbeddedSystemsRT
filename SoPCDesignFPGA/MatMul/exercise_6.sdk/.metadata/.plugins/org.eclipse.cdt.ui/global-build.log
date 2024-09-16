@@ -1,0 +1,525 @@
+13:30:31 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:30:49 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24764	   1164	  22664	  48592	   bdd0	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:30:53 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:30:59 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:32:20 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24764	   1164	  22664	  48592	   bdd0	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:32:25 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:32:42 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:35:04 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24764	   1164	  22664	  48592	   bdd0	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:35:06 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:35:14 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:35:34 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24780	   1164	  22664	  48608	   bde0	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:37:14 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:38:22 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24860	   1164	  22664	  48688	   be30	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:38:40 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24852	   1164	  22664	  48680	   be28	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:38:58 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24924	   1164	  22664	  48752	   be70	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:39:01 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:39:10 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:39:43 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'printTime':
+../src/main.c:104:62: error: expected expression before ')' token
+  xil_printf("Soft: %d cycles, %f ms\r\n", ONE_SECOND-t_soft, );
+                                                              ^
+../src/main.c:103:8: warning: unused variable 'ms_hard' [-Wunused-variable]
+  float ms_hard = (ONE_SECOND-t_hard)/ONE_SECOND*1000;
+        ^~~~~~~
+../src/main.c:102:8: warning: unused variable 'ms_soft' [-Wunused-variable]
+  float ms_soft = (ONE_SECOND-t_soft)/ONE_SECOND*1000;
+        ^~~~~~~
+make: *** [src/main.o] Fejl 1
+13:39:59 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24924	   1164	  22664	  48752	   be70	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:40:02 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24924	   1164	  22664	  48752	   be70	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:40:07 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:40:21 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:41:04 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24796	   1164	  22664	  48624	   bdf0	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:41:11 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:41:28 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24780	   1164	  22664	  48608	   bde0	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:41:33 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:42:00 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:44:21 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24908	   1164	  22664	  48736	   be60	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:44:44 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24928	   1164	  22664	  48756	   be74	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:44:47 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24928	   1164	  22664	  48756	   be74	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:44:49 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:44:54 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:45:20 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24928	   1164	  22664	  48756	   be74	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:45:22 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:45:47 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:45:58 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24928	   1164	  22664	  48756	   be74	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:46:40 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24936	   1164	  22664	  48764	   be7c	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:46:43 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:46:49 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:47:05 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24936	   1164	  22664	  48764	   be7c	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:47:51 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'displayMatrix':
+../src/main.c:104:1: error: expected ';' before '}' token
+ }
+ ^
+make: *** [src/main.o] Fejl 1
+13:47:53 **** Auto Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../exercise_6_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: exercise_6.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../exercise_6_bsp/ps7_cortexa9_0/lib -o "exercise_6.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_6.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_6.elf  |tee "exercise_6.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24936	   1164	  22664	  48764	   be7c	exercise_6.elf
+'Finished building: exercise_6.elf.size'
+' '
+13:48:03 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.
+13:48:13 **** Incremental Build of configuration Debug for project exercise_6 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Ingenting at gøre for 'main-build'.

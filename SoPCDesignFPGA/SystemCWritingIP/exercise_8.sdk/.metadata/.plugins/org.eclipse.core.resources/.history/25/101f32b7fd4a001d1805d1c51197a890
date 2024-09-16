@@ -1,0 +1,9 @@
+#include "xadvios.h"
+#include <xparameters.h>
+
+
+XAdvios adviosHLS;
+
+if (XAdvios_Initialize(&adviosHLS, XPAR_ADVIOS_0_DEVICE_ID) != XST_SUCCESS)) return XST_FAILURE;
+
+XAdvios_SetCtrl(&adviosHLS, 0xFF);

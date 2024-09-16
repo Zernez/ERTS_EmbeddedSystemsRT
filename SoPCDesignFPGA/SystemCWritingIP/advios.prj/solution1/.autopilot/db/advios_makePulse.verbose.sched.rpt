@@ -1,0 +1,239 @@
+
+
+================================================================
+== Vivado HLS Report for 'advios_makePulse'
+================================================================
+* Date:           Wed Oct 12 22:54:08 2022
+
+* Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
+* Project:        advios.prj
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z010clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   8.00|      3.25|        1.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----------+-----------+-----------+-----------+---------+
+    |        Latency        |        Interval       | Pipeline|
+    |    min    |    max    |    min    |    max    |   Type  |
+    +-----------+-----------+-----------+-----------+---------+
+    |  100000004|  100000004|  100000004|  100000004|   none  |
+    +-----------+-----------+-----------+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----------+-----------+-----------+-----------+-----------+-----------+----------+
+        |             |        Latency        | Iteration |  Initiation Interval  |    Trip   |          |
+        |  Loop Name  |    min    |    max    |  Latency  |  achieved |   target  |   Count   | Pipelined|
+        +-------------+-----------+-----------+-----------+-----------+-----------+-----------+----------+
+        |- Loop 1     |  100000002|  100000002|  100000002|          -|          -|    inf    |    no    |
+        | + Loop 1.1  |  100000000|  100000000|          1|          -|          -|  100000000|    no    |
+        +-------------+-----------+-----------+-----------+-----------+-----------+-----------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 0
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 4
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	4  / (!exitcond)
+	3  / (exitcond)
+* FSM state operations: 
+
+ <State 1>: 0.00ns
+ST_1: StgValue_5 (7)  [1/1] 0.00ns
+_ZN7_ap_sc_7sc_core4waitEi.exit3:0  call void (...)* @_ssdm_op_SpecIFCore(i4* %ctrl, [1 x i8]* @p_str10, [10 x i8]* @p_str14, [1 x i8]* @p_str10, i32 -1, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [1 x i8]* @p_str10, [17 x i8]* @p_str15)
+
+ST_1: StgValue_6 (8)  [1/1] 0.00ns
+_ZN7_ap_sc_7sc_core4waitEi.exit3:1  call void (...)* @_ssdm_op_SpecBitsMap(i1* %clk), !map !82
+
+ST_1: StgValue_7 (9)  [1/1] 0.00ns
+_ZN7_ap_sc_7sc_core4waitEi.exit3:2  call void (...)* @_ssdm_op_SpecBitsMap(i1* %reset), !map !86
+
+ST_1: StgValue_8 (10)  [1/1] 0.00ns
+_ZN7_ap_sc_7sc_core4waitEi.exit3:3  call void (...)* @_ssdm_op_SpecBitsMap(i4* %ctrl), !map !90
+
+ST_1: StgValue_9 (11)  [1/1] 0.00ns
+_ZN7_ap_sc_7sc_core4waitEi.exit3:4  call void (...)* @_ssdm_op_SpecBitsMap(i4* %inSwitch), !map !94
+
+ST_1: StgValue_10 (12)  [1/1] 0.00ns
+_ZN7_ap_sc_7sc_core4waitEi.exit3:5  call void (...)* @_ssdm_op_SpecBitsMap(i4* %outLeds), !map !98
+
+ST_1: StgValue_11 (13)  [1/1] 0.00ns
+_ZN7_ap_sc_7sc_core4waitEi.exit3:6  call void (...)* @_ssdm_op_SpecBitsMap(i4* %count), !map !102
+
+ST_1: StgValue_12 (14)  [1/1] 0.00ns  loc: ../temp/advios.cpp:4
+_ZN7_ap_sc_7sc_core4waitEi.exit3:7  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [4 x i8]* @p_str2, i32 0, i32 0, i1* %clk) nounwind
+
+ST_1: StgValue_13 (15)  [1/1] 0.00ns  loc: ../temp/advios.cpp:5
+_ZN7_ap_sc_7sc_core4waitEi.exit3:8  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [7 x i8]* @p_str1, [6 x i8]* @p_str3, i32 0, i32 0, i1* %reset) nounwind
+
+ST_1: StgValue_14 (16)  [1/1] 0.00ns  loc: ../temp/advios.cpp:6
+_ZN7_ap_sc_7sc_core4waitEi.exit3:9  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [13 x i8]* @p_str4, [5 x i8]* @p_str5, i32 0, i32 0, i4* %ctrl) nounwind
+
+ST_1: StgValue_15 (17)  [1/1] 0.00ns  loc: ../temp/advios.cpp:7
+_ZN7_ap_sc_7sc_core4waitEi.exit3:10  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 0, [13 x i8]* @p_str4, [9 x i8]* @p_str6, i32 0, i32 0, i4* %inSwitch) nounwind
+
+ST_1: StgValue_16 (18)  [1/1] 0.00ns  loc: ../temp/advios.cpp:8
+_ZN7_ap_sc_7sc_core4waitEi.exit3:11  call void (...)* @_ssdm_op_SpecPort([7 x i8]* @p_str, i32 1, [13 x i8]* @p_str4, [8 x i8]* @p_str7, i32 0, i32 0, i4* %outLeds) nounwind
+
+ST_1: StgValue_17 (19)  [1/1] 0.00ns  loc: ../temp/advios.cpp:9
+_ZN7_ap_sc_7sc_core4waitEi.exit3:12  call void (...)* @_ssdm_op_SpecProcessDef([7 x i8]* @p_str, i32 2, [10 x i8]* @p_str8) nounwind
+
+ST_1: tmp (20)  [1/1] 0.00ns  loc: ../temp/advios.cpp:9
+_ZN7_ap_sc_7sc_core4waitEi.exit3:13  %tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([15 x i8]* @p_str9)
+
+ST_1: StgValue_19 (21)  [1/1] 0.00ns  loc: ../temp/advios.cpp:9
+_ZN7_ap_sc_7sc_core4waitEi.exit3:14  call void (...)* @_ssdm_op_SpecProtocol(i32 1, [1 x i8]* @p_str10) nounwind
+
+ST_1: p_ssdm_reset_v (22)  [1/1] 0.00ns  loc: ../temp/advios.cpp:9
+_ZN7_ap_sc_7sc_core4waitEi.exit3:15  %p_ssdm_reset_v = call i32 (...)* @_ssdm_op_SpecStateBegin(i32 0, i32 0, i32 1) nounwind
+
+ST_1: StgValue_21 (23)  [1/1] 0.00ns  loc: ../temp/advios.cpp:5
+_ZN7_ap_sc_7sc_core4waitEi.exit3:16  call void @_ssdm_op_Write.ap_auto.volatile.i4P(i4* %count, i4 0)
+
+ST_1: empty (24)  [1/1] 0.00ns  loc: ../temp/advios.cpp:5
+_ZN7_ap_sc_7sc_core4waitEi.exit3:17  %empty = call i32 (...)* @_ssdm_op_SpecStateEnd(i32 %p_ssdm_reset_v) nounwind
+
+ST_1: empty_2 (25)  [1/1] 0.00ns  loc: ../temp/advios.cpp:5
+_ZN7_ap_sc_7sc_core4waitEi.exit3:18  %empty_2 = call i32 (...)* @_ssdm_op_SpecRegionEnd([15 x i8]* @p_str9, i32 %tmp)
+
+
+ <State 2>: 0.00ns
+ST_2: StgValue_24 (26)  [1/1] 0.00ns  loc: ../temp/advios.cpp:6
+_ZN7_ap_sc_7sc_core4waitEi.exit3:19  call void (...)* @_ssdm_op_Wait(i32 1) nounwind
+
+ST_2: StgValue_25 (27)  [1/1] 0.00ns  loc: ../temp/advios.cpp:7
+_ZN7_ap_sc_7sc_core4waitEi.exit3:20  br label %0
+
+
+ <State 3>: 1.59ns
+ST_3: loop_begin (29)  [1/1] 0.00ns
+:0  %loop_begin = call i32 (...)* @_ssdm_op_SpecLoopBegin() nounwind
+
+ST_3: StgValue_27 (30)  [1/1] 1.59ns  loc: ../temp/advios.cpp:11
+:1  br label %1
+
+
+ <State 4>: 3.25ns
+ST_4: i (32)  [1/1] 0.00ns
+:0  %i = phi i27 [ 0, %0 ], [ %i_1, %_ZN7_ap_sc_7sc_core4waitEi.exit ]
+
+ST_4: exitcond (33)  [1/1] 3.25ns  loc: ../temp/advios.cpp:11
+:1  %exitcond = icmp eq i27 %i, -34217728
+
+ST_4: empty_3 (34)  [1/1] 0.00ns
+:2  %empty_3 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 100000000, i64 100000000, i64 100000000)
+
+ST_4: i_1 (35)  [1/1] 2.70ns  loc: ../temp/advios.cpp:11
+:3  %i_1 = add i27 %i, 1
+
+ST_4: StgValue_32 (36)  [1/1] 0.00ns  loc: ../temp/advios.cpp:11
+:4  br i1 %exitcond, label %2, label %_ZN7_ap_sc_7sc_core4waitEi.exit
+
+ST_4: StgValue_33 (38)  [1/1] 0.00ns  loc: ../temp/advios.cpp:11
+_ZN7_ap_sc_7sc_core4waitEi.exit:0  call void (...)* @_ssdm_op_Wait(i32 1) nounwind
+
+ST_4: StgValue_34 (39)  [1/1] 0.00ns  loc: ../temp/advios.cpp:11
+_ZN7_ap_sc_7sc_core4waitEi.exit:1  br label %1
+
+ST_4: val_V (41)  [1/1] 0.00ns  loc: ../temp/advios.cpp:12
+:0  %val_V = call i4 @_ssdm_op_Read.ap_auto.volatile.i4P(i4* %count)
+
+ST_4: v_V (42)  [1/1] 2.35ns  loc: ../temp/advios.cpp:12
+:1  %v_V = add i4 %val_V, 1
+
+ST_4: StgValue_37 (43)  [1/1] 0.00ns  loc: ../temp/advios.cpp:12
+:2  call void @_ssdm_op_Write.ap_auto.volatile.i4P(i4* %count, i4 %v_V)
+
+ST_4: StgValue_38 (44)  [1/1] 0.00ns  loc: ../temp/advios.cpp:13
+:3  br label %0
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8ns, clock uncertainty: 1ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 1.59ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', ../temp/advios.cpp:11) [32]  (1.59 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../temp/advios.cpp:11) [32]  (0 ns)
+	'icmp' operation ('exitcond', ../temp/advios.cpp:11) [33]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

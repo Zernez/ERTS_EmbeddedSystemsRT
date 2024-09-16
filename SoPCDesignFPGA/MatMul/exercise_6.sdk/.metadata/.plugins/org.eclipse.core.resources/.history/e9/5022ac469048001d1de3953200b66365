@@ -1,0 +1,132 @@
+#include "xparameters.h"
+#include "xgpio.h"
+#include "led_ip.h"
+#include "matrix_ip.h"
+#include "xscutimer.h"
+//====================================================
+
+#define MSIZE 4
+#define ONE_SECOND 325000000
+
+typedef union {
+	unsigned char comp[MSIZE];
+	unsigned int vect;
+} vectorType;
+
+typedef vectorType VectorArray[MSIZE];
+
+void setInputMatrices(VectorArray A, VectorArray B);
+void displayMatrix(VectorArray input);
+void printTime(u32 t_soft, u32 t_hard);
+void multiMatrixSoft(VectorArray A, VectorArray B, VectorArray P);
+void multiMatrixHard(VectorArray A, VectorArray B, VectorArray P);
+
+VectorArray pInst;
+VectorArray aInst;
+VectorArray bTInst;
+XScuTimer TimerInstance;
+u32 t_soft_start;
+u32 t_soft_final;
+u32 t_hard_start;
+u32 t_hard_final;
+
+
+int main (void)
+{
+	XScuTimer_Config* ConfigPtr;
+	XScuTimer* TimerInstancePtr = &TimerInstance;
+
+	ConfigPtr = XScuTimer_LookupConfig(XPAR_PS7_SCUTIMER_0_DEVICE_ID);
+	int Status = XScuTimer_CfgInitialize(TimerInstancePtr, ConfigPtr, ConfigPtr->BaseAddr);
+	if(Status != XST_SUCCESS){
+		xil_printf("Timer initialization failed!\r\n");
+		return XST_FAILURE;
+	}
+
+	Status = XScuTimer_SelfTest(TimerInstancePtr);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	// Load timer with delay in multiple of ONE_SECOND
+	XScuTimer_LoadTimer(TimerInstancePtr, ONE_SECOND);
+	// Set AutoLoad mode
+	XScuTimer_EnableAutoReload(TimerInstancePtr);
+
+	setInputMatrices(aInst, bTInst);
+	displayMatrix(aInst);
+	displayMatrix(bTInst);
+
+	XScuTimer_Start(TimerInstancePtr);
+	t_soft_start= XScuTimer_GetCounterValue(TimerInstancePtr);
+	multiMatrixSoft(aInst, bTInst, pInst);
+	t_soft_final= XScuTimer_GetCounterValue(TimerInstancePtr);
+	t_soft_final= (t_soft_start - t_soft_final);
+
+	XScuTimer_RestartTimer(TimerInstancePtr);
+
+	XScuTimer_Start(TimerInstancePtr);
+	t_hard_start= XScuTimer_GetCounterValue(TimerInstancePtr);
+	multiMatrixHard(aInst, bTInst, pInst);
+	t_hard_final= XScuTimer_GetCounterValue(TimerInstancePtr);
+	t_hard_final= (t_soft_start - t_soft_final);
+
+	displayMatrix(pInst);
+	printTime(t_soft_final, t_hard_final);
+}
+
+void setInputMatrices(VectorArray A, VectorArray B){
+	int a = 1;
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			A[i].comp[j] = a++;
+			B[i].comp[j] = i+1;
+		}
+	}
+}
+
+void displayMatrix(VectorArray input){
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			xil_printf("%d ", input[i].comp[j]);
+		}
+		xil_printf("\r\n");
+	}
+}
+
+void printTime(u32 t_soft, u32 t_hard){
+	float ms_soft = (ONE_SECOND-t_soft)/ONE_SECOND*1000;
+	float ms_hard = (ONE_SECOND-t_hard)/ONE_SECOND*1000;
+	xil_printf("Soft: %d cycles, %f ms\r\n", ONE_SECOND-t_soft, ms_soft);
+
+	xil_printf("Hard: %d cycles, %f ms\r\n", ONE_SECOND-t_hard, ms_hard);
+}
+
+void multiMatrixSoft(VectorArray A, VectorArray B, VectorArray P){
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			for (int k=0; k<MSIZE; k++)
+			{
+				P[i].comp[j] += A[i].comp[k] * B[j].comp[k];
+			}
+		}
+	}
+}
+
+void multiMatrixHard(VectorArray A, VectorArray B, VectorArray P){
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			Xil_Out32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S00_AXI_SLV_REG0_OFFSET, A[i].vect);
+			Xil_Out32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S00_AXI_SLV_REG1_OFFSET, B[j].vect);
+			P[i].comp[j] = Xil_In32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S00_AXI_SLV_REG2_OFFSET);
+		}
+	}
+}

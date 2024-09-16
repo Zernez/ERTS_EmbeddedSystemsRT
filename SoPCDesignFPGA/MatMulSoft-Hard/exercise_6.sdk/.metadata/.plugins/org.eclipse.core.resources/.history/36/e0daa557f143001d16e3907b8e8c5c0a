@@ -1,0 +1,70 @@
+#include "xparameters.h"
+#include "xgpio.h"
+#include "led_ip.h"
+#include "matrix_ip.h"
+//====================================================
+
+#define MSIZE 4
+
+typedef union {
+	unsigned char comp[MSIZE];
+	unsigned int vect;
+} vectorType;
+
+typedef vectorType VectorArray[MSIZE];
+
+void setInputMatrices(VectorArray A, VectorArray B);
+void displayMatrix(VectorArray input);
+void multiMatrixSoft(VectorArray A, VectorArray B, VectorArray P);
+
+VectorArray pInst;
+VectorArray aInst;
+VectorArray bTInst;
+
+int main (void)
+{
+	setInputMatrices(aInst, bTInst);
+	displayMatrix(aInst);
+	displayMatrix(bTInst);
+	multiMatrixSoft(aInst, bTInst, pInst);
+	displayMatrix(pInst);
+}
+
+void setInputMatrices(VectorArray A, VectorArray B){
+	int a = 1;
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			A[i].comp[j] = a++;
+			B[i].comp[j] = i+1;
+		}
+	}
+}
+
+void displayMatrix(VectorArray input){
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			xil_printf("%d ", input[i].comp[j]);
+		}
+		xil_printf("\r\n");
+	}
+}
+
+
+void multiMatrixSoft(VectorArray A, VectorArray B, VectorArray P){
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			for (int k=0; k<MSIZE; k++)
+			{
+				Xil_Out32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S_AXI_SLV_REG0_OFFSET, A[j].vect);
+				Xil_Out32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S_AXI_SLV_REG1_OFFSET, B[k].vect);
+				P[j].comp[k] = Xil_In32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S_AXI_SLV_REG2_OFFSET);
+			}
+		}
+	}
+}

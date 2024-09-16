@@ -1,0 +1,114 @@
+#include "xparameters.h"
+#include "xgpio.h"
+#include "led_ip.h"
+#include "matrix_ip.h"
+#include "xscutimer.h"
+//====================================================
+
+#define MSIZE 4
+
+typedef union {
+	unsigned char comp[MSIZE];
+	unsigned int vect;
+} vectorType;
+
+typedef vectorType VectorArray[MSIZE];
+
+void setInputMatrices(VectorArray A, VectorArray B);
+void displayMatrix(VectorArray input);
+void printTime();
+void multiMatrixSoft(VectorArray A, VectorArray B, VectorArray P);
+void multiMatrixHard(VectorArray A, VectorArray B, VectorArray P);
+
+VectorArray pInst;
+VectorArray aInst;
+VectorArray bTInst;
+XScuTimer Timer;
+int t_soft;
+int t_hard;
+
+int main (void)
+{
+	XScuTimer_Config* ConfigPtr;
+	XScuTimer* TimerInstancePtr = &TimerInstance;
+
+	ConfigPtr = XScuTimer_LookupConfig(XPAR_PS7_SCUTIMER_0_DEVICE_ID);
+	int Status = XScuTimer_CfgInitialize(TimerInstancePtr, ConfigPtr, ConfigPtr->BaseAddr);
+	if(Status != XST_SUCCESS){
+		xil_printf("Timer initialization failed!\r\n");
+		return XST_FAILURE;
+	}
+
+	Status = XScuTimer_SelfTest(TimerInstancePtr);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+
+	setInputMatrices(aInst, bTInst);
+	displayMatrix(aInst);
+	displayMatrix(bTInst);
+
+	XScuTimer_Start(TimerInstancePtr);
+	multiMatrixHard(aInst, bTInst, pInst);
+	XScuTimer_Stop(TimerInstancePtr);
+	t_soft= XScuTimer_GetCounterValue(TimerInstancePtr);
+
+	XScuTimer_RestartTimer(TimerInstancePtr);
+	XScuTimer_Start(TimerInstancePtr);
+	multiMatrixSoft(aInst, bTInst, pInst);
+	XScuTimer_Stop(TimerInstancePtr);
+	t_hard= XScuTimer_GetCounterValue(TimerInstancePtr);
+
+
+	displayMatrix(pInst);
+	printTime(t_soft, t_hard);
+}
+
+void setInputMatrices(VectorArray A, VectorArray B){
+	int a = 1;
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			A[i].comp[j] = a++;
+			B[i].comp[j] = i+1;
+		}
+	}
+}
+
+void displayMatrix(VectorArray input){
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			xil_printf("%d ", input[i].comp[j]);
+		}
+		xil_printf("\r\n");
+	}
+}
+
+void multiMatrixSoft(VectorArray A, VectorArray B, VectorArray P){
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			for (int k=0; k<MSIZE; k++)
+			{
+				P[i].comp[j] += A[i].comp[k] * B[j].comp[k];
+			}
+		}
+	}
+}
+
+void multiMatrixHard(VectorArray A, VectorArray B, VectorArray P){
+	for (int i=0; i<MSIZE; i++)
+	{
+		for (int j=0; j<MSIZE; j++)
+		{
+			Xil_Out32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S00_AXI_SLV_REG0_OFFSET, A[i].vect);
+			Xil_Out32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S00_AXI_SLV_REG1_OFFSET, B[j].vect);
+			P[i].comp[j] = Xil_In32(XPAR_MATRIX_IP_0_S00_AXI_BASEADDR + MATRIX_IP_S00_AXI_SLV_REG2_OFFSET);
+		}
+	}
+}

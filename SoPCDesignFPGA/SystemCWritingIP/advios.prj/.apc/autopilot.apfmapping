@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="advios.cpp" path="C:\Users\User\Desktop\UNI\EmbeddedRealTimeSystem\Assignment2\exercises\temp\advios.cpp"/>
+    <originFiles name="advios.h" path="C:\Users\User\Desktop\UNI\EmbeddedRealTimeSystem\Assignment2\exercises\temp\advios.h"/>
+    <originFiles name="advios_driver.h" path="C:\Users\User\Desktop\UNI\EmbeddedRealTimeSystem\Assignment2\exercises\temp\advios_driver.h"/>
+  </source>
+  <testbench>
+    <originFiles name="tb_advios.cpp" path="C:\Users\User\Desktop\UNI\EmbeddedRealTimeSystem\Assignment2\exercises\temp\tb_advios.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

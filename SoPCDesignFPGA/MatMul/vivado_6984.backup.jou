@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Mon Oct 10 13:18:33 2022
+# Process ID: 6984
+# Current directory: C:/git/erts/assignment_2/project_6 soft-vs-hard
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14908 C:\git\erts\assignment_2\project_6 soft-vs-hard\exercise_6.xpr
+# Log file: C:/git/erts/assignment_2/project_6 soft-vs-hard/vivado.log
+# Journal file: C:/git/erts/assignment_2/project_6 soft-vs-hard\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.xpr}
+
+update_compile_order -fileset sources_1
+launch_sdk -workspace {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk} -hwspec {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf}
+launch_sdk -workspace {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk} -hwspec {C:/git/erts/assignment_2/project_6 soft-vs-hard/exercise_6.sdk/system_wrapper.hdf}
